@@ -50,6 +50,6 @@ void Input::updateKeys(const SDL_Keycode &key, bool keyDown) {
     keys[index] = keyDown;
 }
 
-bool Input::getQuit() const {
-    return keys[QUIT] || keys[ESC];
+bool Input::getBtn(const Key key) const {
+    return keys[key];
 }

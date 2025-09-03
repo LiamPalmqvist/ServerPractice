@@ -17,11 +17,24 @@ int game::mainLoop() {
     SDL_Event event;
     while (running) {
         input->pollEvents(event);
-        if (input->getQuit()) running = false;
+        if (input->getBtn(ESC)) running = false;
 
+        if (input->getBtn(W)) {
+            position[1]--;
+        }
+        if (input->getBtn(A)) {
+            position[0]--;
+        }
+        if (input->getBtn(S)) {
+            position[1]++;
+        }
+        if (input->getBtn(D)) {
+            position[0]++;
+        }
         // Render something (black background)
         SDL_SetRenderDrawColor(renderer->renderer, 0, 0, 0, 255); // RGB + Alpha
         SDL_RenderClear(renderer->renderer); // Clear the screen with the draw colour
+        renderer->DrawBox(position);
         SDL_RenderPresent(renderer->renderer); // Present the renderer to the screen
     }
 

@@ -13,7 +13,7 @@ class game {
 public:
     std::shared_ptr<Renderer> renderer;
     std::shared_ptr<Input> input;
-    int position[2];
+    int position[2] = { 0, 0 };
     game();
 
     int mainLoop();

@@ -25,7 +25,7 @@ public:
     ~Input();
     void pollEvents(SDL_Event &event);
     void updateKeys(const SDL_Keycode &, bool);
-    bool getQuit() const;
+    bool getBtn(Key key) const;
 };
 
 

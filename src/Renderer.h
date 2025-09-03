@@ -13,6 +13,8 @@ public:
     SDL_Renderer *renderer;
 
     Renderer();
+
+    void DrawBox(int *position);
 };
 
 
