@@ -7,11 +7,13 @@
 #include <iostream>
 
 #include "Renderer.h"
+#include "Input.h"
 
 class game {
 public:
     std::shared_ptr<Renderer> renderer;
-
+    std::shared_ptr<Input> input;
+    int position[2];
     game();
 
     int mainLoop();

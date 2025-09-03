@@ -6,6 +6,9 @@
 
 game::game() {
     renderer = std::make_shared<Renderer>();
+    input = std::make_shared<Input>();
+    // This is the game logic part of the file
+
 };
 
 int game::mainLoop() {
@@ -13,12 +16,8 @@ int game::mainLoop() {
     bool running = true;
     SDL_Event event;
     while (running) {
-        // process events
-        while (SDL_PollEvent(&event)) {
-            if (event.type == SDL_QUIT) {
-                running = false; // exit the loop if the window is closed
-            }
-        }
+        input->pollEvents(event);
+        if (input->getQuit()) running = false;
 
         // Render something (black background)
         SDL_SetRenderDrawColor(renderer->renderer, 0, 0, 0, 255); // RGB + Alpha

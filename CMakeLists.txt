@@ -20,6 +20,8 @@ add_executable(server2
         src/game.h
         src/Renderer.cpp
         src/Renderer.h
+        src/Input.cpp
+        src/Input.h
 )
 
 # Find the required packages for the project - The only one required here is SDL2
