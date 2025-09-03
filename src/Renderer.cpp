@@ -14,7 +14,7 @@ Renderer::Renderer() {
 
     // 2. Create a window
     window = SDL_CreateWindow(
-        "NES",                  // window title
+        "Client",               // window title
         SDL_WINDOWPOS_CENTERED, // x position
         SDL_WINDOWPOS_CENTERED, // y position
         800,                    // width
