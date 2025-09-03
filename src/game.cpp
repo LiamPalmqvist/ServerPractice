@@ -19,17 +19,23 @@ int game::mainLoop() {
         input->pollEvents(event);
         if (input->getBtn(ESC)) running = false;
 
+        if (input->getBtn(SHIFT)) {
+            speed = 2;
+        } else {
+            speed = 1;
+        }
+
         if (input->getBtn(W)) {
-            position[1]--;
+            position[1]-=speed;
         }
         if (input->getBtn(A)) {
-            position[0]--;
+            position[0]-=speed;
         }
         if (input->getBtn(S)) {
-            position[1]++;
+            position[1]+=speed;
         }
         if (input->getBtn(D)) {
-            position[0]++;
+            position[0]+=speed;
         }
         // Render something (black background)
         SDL_SetRenderDrawColor(renderer->renderer, 0, 0, 0, 255); // RGB + Alpha

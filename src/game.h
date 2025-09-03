@@ -14,6 +14,7 @@ public:
     std::shared_ptr<Renderer> renderer;
     std::shared_ptr<Input> input;
     int position[2] = { 0, 0 };
+    int speed = 1;
     game();
 
     int mainLoop();

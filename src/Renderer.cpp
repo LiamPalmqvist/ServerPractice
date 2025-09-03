@@ -49,6 +49,7 @@ Renderer::Renderer() {
 
 void Renderer::DrawBox(int *position) {
     SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-    SDL_RenderDrawPoint(renderer, position[0], position[1]);
-    std::cout << position[0] << " " << position[1] << std::endl;
+    const SDL_Rect rect = {position[0], position[1], 20,20};
+    SDL_RenderDrawRect(renderer, &rect);
+    SDL_RenderFillRect(renderer, &rect);
 }
